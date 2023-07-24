@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  timer:
+    build: .
+    container_name: timer
+    restart: always
+    ports:
+      - 3330:3330
+    volumes:
+      - type: bind
+        source: ./app
+        target: /api/app
+    command: npm run start
